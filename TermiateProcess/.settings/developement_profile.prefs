@@ -1,0 +1,16 @@
+
+build.required=yes
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://localhost\:8080/gi
+deploy_serverUrl=http\://localhost\:8080/ode
+deploymenttimeout=120
+diagram_baseUri=http\://termiateprocess.com
+eclipse.preferences.version=1
+full.build.required=no
+is.mapper.too.many.elements.exceeded=no
+is.timerstart.annotation.persistance.required=no
+opening_process_diagram=false
+reset.node.cache=yes
+serverpingtimeout=10
+type=non.unique
+uuid=52101290-ecf3-4df6-805b-c5d2d18d97fc

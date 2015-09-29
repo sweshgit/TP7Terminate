@@ -1,0 +1,7 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://termiateprocess.com/TerminatProcess" xmlns:Client="http://termiateprocess.com/TerminatProcess/Client" xmlns:TerminateProcess="http://termiateprocess.com/TerminatProcess/TerminateProcess" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://termiateprocess.com/TerminatProcess">
+    <wsdl:import namespace="http://termiateprocess.com/TerminatProcess/TerminateProcess" location="TerminatProcess-TerminateProcess.wsdl"/>
+    <pnlk:partnerLinkType name="TerminateProcessAndClient">
+        <pnlk:role name="TerminateProcess_for_Client" portType="TerminateProcess:ForClient"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

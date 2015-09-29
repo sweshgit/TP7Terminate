@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_AosBcWXSEeW5h-MdiIL_wg" iD="_AosBcGXSEeW5h-MdiIL_wg">
+  <pools xmi:type="bpmn:Pool" xmi:id="_Ao-8YWXSEeW5h-MdiIL_wg" iD="_Ao-8YGXSEeW5h-MdiIL_wg" name="Client">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bEgcIGXWEeW5h-MdiIL_wg" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bEgcIWXWEeW5h-MdiIL_wg" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_LXV8gWXSEeW5h-MdiIL_wg" iD="_LXV8gGXSEeW5h-MdiIL_wg" name="terminateProcessReceiveRequestMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LXV8gmXSEeW5h-MdiIL_wg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LXV8g2XSEeW5h-MdiIL_wg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LXftiGXSEeW5h-MdiIL_wg" key="defaultDeclarationName" value="terminateProcessReceiveRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LXftjGXSEeW5h-MdiIL_wg" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/TerminateProcess}ReceiveRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_LXftiWXSEeW5h-MdiIL_wg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LXftimXSEeW5h-MdiIL_wg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LXfti2XSEeW5h-MdiIL_wg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_xzmxqWXTEeW5h-MdiIL_wg" iD="_xzmxqGXTEeW5h-MdiIL_wg" name="terminateProcessReceiveResponseMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xzmxqmXTEeW5h-MdiIL_wg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzmxq2XTEeW5h-MdiIL_wg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzmxtGXTEeW5h-MdiIL_wg" key="defaultDeclarationName" value="terminateProcessReceiveResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzv7k2XTEeW5h-MdiIL_wg" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/TerminateProcess}ReceiveResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_xzv7kGXTEeW5h-MdiIL_wg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xzv7kWXTEeW5h-MdiIL_wg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzv7kmXTEeW5h-MdiIL_wg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Ao-8Y2XSEeW5h-MdiIL_wg" iD="_Ao-8YmXSEeW5h-MdiIL_wg" associations="_LXftiWXSEeW5h-MdiIL_wg _xzv7kGXTEeW5h-MdiIL_wg" name="Send&#x9;" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_LXDBkWXSEeW5h-MdiIL_wg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_xzTPoWXTEeW5h-MdiIL_wg"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_C6RpkWXSEeW5h-MdiIL_wg" iD="_C6RpkGXSEeW5h-MdiIL_wg" name="TerminateProcess">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_LYFjYWXSEeW5h-MdiIL_wg" iD="_LYFjYGXSEeW5h-MdiIL_wg" name="thisReceiveRequestMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LYFjYmXSEeW5h-MdiIL_wg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LYFjY2XSEeW5h-MdiIL_wg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LYFjbGXSEeW5h-MdiIL_wg" key="defaultDeclarationName" value="thisReceiveRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LYFjcGXSEeW5h-MdiIL_wg" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/TerminateProcess}ReceiveRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_LYFjbWXSEeW5h-MdiIL_wg" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LYFjbmXSEeW5h-MdiIL_wg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LYFjb2XSEeW5h-MdiIL_wg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_xzdAoWXTEeW5h-MdiIL_wg" iD="_xzdAoGXTEeW5h-MdiIL_wg" name="thisReceiveResponseMsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xzdAomXTEeW5h-MdiIL_wg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzdAo2XTEeW5h-MdiIL_wg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzdArGXTEeW5h-MdiIL_wg" key="defaultDeclarationName" value="thisReceiveResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzmxomXTEeW5h-MdiIL_wg" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/TerminateProcess}ReceiveResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_xzdArWXTEeW5h-MdiIL_wg" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xzmxoGXTEeW5h-MdiIL_wg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xzmxoWXTEeW5h-MdiIL_wg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_LW5QkWXSEeW5h-MdiIL_wg" iD="_LW5QkGXSEeW5h-MdiIL_wg" associations="_LYFjbWXSEeW5h-MdiIL_wg" outgoingEdges="_ZWzrmmXTEeW5h-MdiIL_wg" name="Receive" activityType="Task">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_LXDBkWXSEeW5h-MdiIL_wg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_T_vgQWXTEeW5h-MdiIL_wg" iD="_T_vgQGXTEeW5h-MdiIL_wg" associations="_xzdArWXTEeW5h-MdiIL_wg" incomingEdges="_dhGhwWXTEeW5h-MdiIL_wg" name="Output" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_xzTPoWXTEeW5h-MdiIL_wg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ZWzrkWXTEeW5h-MdiIL_wg" iD="_ZWzrkGXTEeW5h-MdiIL_wg" outgoingEdges="_dhGhwWXTEeW5h-MdiIL_wg _mdaVemXTEeW5h-MdiIL_wg" incomingEdges="_ZWzrmmXTEeW5h-MdiIL_wg" name="Select_Output" activityType="GatewayDataBasedExclusive"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_mdaVcWXTEeW5h-MdiIL_wg" iD="_mdaVcGXTEeW5h-MdiIL_wg" incomingEdges="_mdaVemXTEeW5h-MdiIL_wg" name="Default" activityType="EventEndMessage"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_ZWzrmmXTEeW5h-MdiIL_wg" iD="_ZWzrmWXTEeW5h-MdiIL_wg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_dhGhwWXTEeW5h-MdiIL_wg" iD="_dhGhwGXTEeW5h-MdiIL_wg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_mdaVemXTEeW5h-MdiIL_wg" iD="_mdaVeWXTEeW5h-MdiIL_wg" conditionType="Default" isDefault="true"/>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_LXDBkWXSEeW5h-MdiIL_wg" iD="_LXDBkGXSEeW5h-MdiIL_wg" source="_Ao-8Y2XSEeW5h-MdiIL_wg" target="_LW5QkWXSEeW5h-MdiIL_wg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oNCqkGXUEeW5h-MdiIL_wg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oNCqkWXUEeW5h-MdiIL_wg" key="douri" value="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oNCqkmXUEeW5h-MdiIL_wg" key="douri2" value="project:///TerminateXMLSchema.xsd?xsdelement={http://www.example.org/TerminateXMLSchema}start"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_xzTPoWXTEeW5h-MdiIL_wg" iD="_xzTPoGXTEeW5h-MdiIL_wg" source="_T_vgQWXTEeW5h-MdiIL_wg" target="_Ao-8Y2XSEeW5h-MdiIL_wg"/>
+</bpmn:BpmnDiagram>

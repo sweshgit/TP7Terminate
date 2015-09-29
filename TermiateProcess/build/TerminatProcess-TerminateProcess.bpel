@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://termiateprocess.com/TerminatProcess/TerminateProcess" xmlns:diag="http://termiateprocess.com/TerminatProcess" xmlns:Client="http://termiateprocess.com/TerminatProcess/Client" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="TerminateProcess" name="TerminateProcess" bpmn:id="_C6RpkGXSEeW5h-MdiIL_wg" targetNamespace="http://termiateprocess.com/TerminatProcess/TerminateProcess">
+  <bpel:import namespace="http://termiateprocess.com/TerminatProcess" location="TerminatProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://termiateprocess.com/TerminatProcess/TerminateProcess" location="TerminatProcess-TerminateProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="terminateProcessAndClientPlkVar" partnerLinkType="diag:TerminateProcessAndClient" myRole="TerminateProcess_for_Client"/>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisReceiveRequestMsg" messageType="this:ReceiveRequest"/>
+    <bpel:variable name="thisReceiveResponseMsg" messageType="this:ReceiveResponse"/>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="terminateProcessAndClientPlkVar" portType="this:ForClient" operation="Receive" variable="thisReceiveRequestMsg" createInstance="yes" bpmn:label="Receive" name="Receive" bpmn:id="_LW5QkGXSEeW5h-MdiIL_wg"></bpel:receive>
+    <bpel:assign name="init-variables-TerminateProcess" bpmn:id="_LW5QkGXSEeW5h-MdiIL_wg">
+      <bpel:copy bpmn:label="$thisReceiveResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<this:ReceiveResponse></this:ReceiveResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisReceiveResponseMsg.body</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$thisReceiveRequestMsg.body = "Yes"</bpel:condition>
+      <bpel:sequence>
+        <bpel:assign bpmn:label="Output" name="Output" bpmn:id="_T_vgQGXTEeW5h-MdiIL_wg">
+          <bpel:copy>
+            <bpel:from>"This is the correct Choice"</bpel:from>
+            <bpel:to>$thisReceiveResponseMsg.body</bpel:to>
+          </bpel:copy>
+        </bpel:assign>
+        <bpel:reply partnerLink="terminateProcessAndClientPlkVar" portType="this:ForClient" operation="Receive" variable="thisReceiveResponseMsg" bpmn:label="Output" name="Output-1" bpmn:id="_T_vgQGXTEeW5h-MdiIL_wg"></bpel:reply>
+      </bpel:sequence>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Default" name="Default" bpmn:id="_mdaVcGXTEeW5h-MdiIL_wg">
+            <bpel:copy>
+              <bpel:from>"This is the Wrong Choice"</bpel:from>
+              <bpel:to>$thisReceiveResponseMsg.body</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+  </bpel:sequence>
+</bpel:process>

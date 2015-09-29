@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:TerminateProcess="http://thisdiagram/TerminateProcess" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_AosBcGXSEeW5h-MdiIL_wg" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="TerminateProcessAndClient" bpdm:poolOneId="_C6RpkGXSEeW5h-MdiIL_wg" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="TerminateProcess" bpdm:poolTwoId="_Ao-8YGXSEeW5h-MdiIL_wg" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="TerminateProcess_for_Client" portType="TerminateProcess:ForClient" bpdm:thisPoolId="_C6RpkGXSEeW5h-MdiIL_wg">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="Receive" bpdm:canid="_Ao-8YmXSEeW5h-MdiIL_wg._LW5QkGXSEeW5h-MdiIL_wg._T_vgQGXTEeW5h-MdiIL_wg.">
+          <wsdl:input message="TerminateProcess:ReceiveRequest" name="Receive" bpdm:canid="_LXDBkGXSEeW5h-MdiIL_wg" bpdm:senderId="_Ao-8YmXSEeW5h-MdiIL_wg" bpdm:receiverId="_LW5QkGXSEeW5h-MdiIL_wg" bpdm:senderName="Send&#9;" bpdm:receiverName="Receive" bpdm:receiverPoolId="_C6RpkGXSEeW5h-MdiIL_wg" bpdm:dataobjectPointer="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string" bpdm:bodyPartElemName="ReceiveRequest" bpdm:bodyPartElemType="{http://www.w3.org/2001/XMLSchema}string"></wsdl:input>
+          <wsdl:output message="TerminateProcess:ReceiveResponse" name="ReceiveResponse" bpdm:canid="_xzTPoGXTEeW5h-MdiIL_wg" bpdm:senderId="_T_vgQGXTEeW5h-MdiIL_wg" bpdm:receiverId="_Ao-8YmXSEeW5h-MdiIL_wg" bpdm:senderName="Output" bpdm:receiverName="Send&#9;" bpdm:receiverPoolId="_Ao-8YGXSEeW5h-MdiIL_wg" bpdm:bodyPartElemName="ReceiveResponse" bpdm:bodyPartElemType="xs:string"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

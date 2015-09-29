@@ -1,0 +1,73 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/TerminateProcess" xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/TerminateProcess">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/TerminateProcess" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="Client" bpdm:comment="contrib=&apos;partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="ForClient">
+                <wsdl:operation name="Receive" bpdm:source="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg">
+                    <wsdl:input message="this:ReceiveRequest" name="Receive"/>
+                    <wsdl:output message="this:ReceiveResponse" name="ReceiveResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="ReceiveRequest" type="xs:string" bpdm:source="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg"/>
+            <wsdl:message name="ReceiveRequest" bpdm:source="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg">
+                <wsdl:part name="body" element="this:ReceiveRequest"/>
+            </wsdl:message>
+            <xs:element name="ReceiveResponse" type="xs:string" bpdm:source="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg"/>
+            <wsdl:message name="ReceiveResponse" bpdm:source="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg">
+                <wsdl:part name="body" element="this:ReceiveResponse"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForClient" type="this:ForClient" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Ao-8YGXSEeW5h-MdiIL_wg" bpdm:label="Client"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="TerminateProcess" bpdm:ID="_C6RpkGXSEeW5h-MdiIL_wg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="terminateProcessAndClientPlkVar" partnerLinkType="diag:TerminateProcessAndClient" myRole="TerminateProcess_for_Client" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForClient" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/TerminateProcess/Client" bpdm:providedIsDefault="true" bpdm:clientTasks="_C6RpkGXSEeW5h-MdiIL_wg:_T_vgQGXTEeW5h-MdiIL_wg, _C6RpkGXSEeW5h-MdiIL_wg:_LW5QkGXSEeW5h-MdiIL_wg" bpdm:isManaged="true" bpdm:otherPoolId="_Ao-8YGXSEeW5h-MdiIL_wg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="thisReceiveRequestMsg" messageType="this:ReceiveRequest" bpdm:id="_LYFjYGXSEeW5h-MdiIL_wg" bpdm:messageIds="inc:_LXDBkGXSEeW5h-MdiIL_wg"/>
+            <bpel:variable name="thisReceiveResponseMsg" messageType="this:ReceiveResponse" bpdm:id="_xzdAoGXTEeW5h-MdiIL_wg" bpdm:messageIds=" out:_xzTPoGXTEeW5h-MdiIL_wg">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:ReceiveResponse" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Receive" partnerLink="terminateProcessAndClientPlkVar" portType="this:ForClient" isMyRole="true" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="Receive" bpdm:ID="_LW5QkGXSEeW5h-MdiIL_wg">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisReceiveRequestMsg" bpdm:msgVarScopeId="_C6RpkGXSEeW5h-MdiIL_wg" bpdm:variableIsManaged="true" bpdm:messageType="this:ReceiveRequest" bpdm:ID="_LXDBkGXSEeW5h-MdiIL_wg"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:gateway bpdm:label="Select_Output" bpdm:ID="_ZWzrkGXTEeW5h-MdiIL_wg" bpdm:gatewayType="data_xor" bpdm:isMerge="false">
+                <bpdm:linkset bpdm:type="case" bpdm:default="false" bpdm:ID="_dhGhwGXTEeW5h-MdiIL_wg" bpdm:targetDisplayName="[Select_Output - Output]">
+                    <bpel:condition>$thisReceiveRequestMsg.body = "Yes"<mapper:mapperLink><mapper:vertice id="783543844" targetPath="$condition" targetedBy="2043947004-arg0"></mapper:vertice><mapper:vertice id="2043947004" dimension="175x25" location="279,135"><mapper:value>=</mapper:value></mapper:vertice><mapper:vertice id="1110804799" sourcePath="$thisReceiveRequestMsg.body" targetedBy="2043947004-arg1"></mapper:vertice><mapper:vertice id="726218676" dimension="175x25" location="72,192" targetedBy="2043947004-arg2"><mapper:value>"Yes"</mapper:value></mapper:vertice></mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="case" bpdm:default="true" bpdm:ID="_mdaVeWXTEeW5h-MdiIL_wg" bpdm:targetDisplayName="default"></bpdm:linkset>
+                <bpel:sequence>
+                    <bpdm:messagingtask operation="Receive" partnerLink="terminateProcessAndClientPlkVar" portType="this:ForClient" isMyRole="true" enableSharing="false" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="Output" bpdm:ID="_T_vgQGXTEeW5h-MdiIL_wg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>"This is the correct Choice"</bpel:from>
+                                <bpel:to>$thisReceiveResponseMsg.body/text()</bpel:to><mapper:mapperLink><mapper:vertice id="901205807" targetPath="$thisReceiveResponseMsg.body/text()" targetedBy="363881833-arg0"></mapper:vertice><mapper:vertice id="363881833" dimension="175x25" location="203,131"><mapper:value>"This is the correct Choice"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisReceiveResponseMsg" bpdm:msgVarScopeId="_C6RpkGXSEeW5h-MdiIL_wg" bpdm:variableIsManaged="true" bpdm:messageType="this:ReceiveResponse" bpdm:ID="_xzTPoGXTEeW5h-MdiIL_wg"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+                <bpel:sequence>
+                    <bpdm:messagingtask eventType="end: message" bpdm:backEdgeId="" bpdm:backEdgeParticipantType="none" bpdm:backEdgeParticipantTarget="none" bpdm:label="Default" bpdm:ID="_mdaVcGXTEeW5h-MdiIL_wg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>"This is the Wrong Choice"</bpel:from>
+                                <bpel:to>$thisReceiveResponseMsg.body/text()</bpel:to><mapper:mapperLink><mapper:vertice id="1883002841" targetPath="$thisReceiveResponseMsg.body/text()" targetedBy="813063729-arg0"></mapper:vertice><mapper:vertice id="813063729" dimension="175x25" location="57,100"><mapper:value>"This is the Wrong Choice"</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpdm:gateway>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://termiateprocess.com/TerminatProcess" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://termiateprocess.com/TerminatProcess/TerminateProcess" xmlns:Client="http://termiateprocess.com/TerminatProcess/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:TerminateProcess" fileName="TerminatProcess-TerminateProcess.bpel">
+  <dd:property name="PATH">TerminatProcess</dd:property>
+  <dd:property name="SVG">TerminatProcess.svg</dd:property>
+  <dd:provide partnerLink="terminateProcessAndClientPlkVar">
+    <dd:service name="this:CanonicServiceForClient" port="canonicPort"></dd:service>
+  </dd:provide>
+</dd:process>

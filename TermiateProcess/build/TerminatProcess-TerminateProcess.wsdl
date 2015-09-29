@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:this="http://termiateprocess.com/TerminatProcess/TerminateProcess" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://termiateprocess.com/TerminatProcess" xmlns:Client="http://termiateprocess.com/TerminatProcess/Client" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://termiateprocess.com/TerminatProcess/TerminateProcess">
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://termiateprocess.com/TerminatProcess/TerminateProcess">
+            <xs:element name="ReceiveRequest" type="xs:string"/>
+            <xs:element name="ReceiveResponse" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="ReceiveRequest">
+        <wsdl:part name="body" element="this:ReceiveRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ReceiveResponse">
+        <wsdl:part name="body" element="this:ReceiveResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ForClient">
+        <wsdl:operation name="Receive">
+            <wsdl:input message="this:ReceiveRequest" name="Receive"/>
+            <wsdl:output message="this:ReceiveResponse" name="ReceiveResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CanonicBindingForClient" type="this:ForClient">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Receive">
+            <soap:operation style="document" soapAction="http://termiateprocess.com/TerminatProcess/TerminateProcess/ForClient/Receive"/>
+            <wsdl:input name="Receive">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ReceiveResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CanonicServiceForClient">
+        <wsdl:port name="canonicPort" binding="this:CanonicBindingForClient">
+            <soap:address location="http://localhost:8080/ode/processes/TermiateProcess/TerminatProcess/TerminateProcess/Client"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
